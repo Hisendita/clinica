@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+      <menuitem name="Gestion Pacientes" id="gestion_pacientes.menu_root" />
+      <menuitem name="Pacientes" id="gestion_pacientes.menu_pacientes" parent="gestion_pacientes.menu_root" action="gestion_pacientes.action_window_pacientes"/>
+    </data>
+  </odoo>
