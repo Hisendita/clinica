@@ -12,8 +12,7 @@
             <field name ="dni"/> 
             <field name="telefono"/>
             <field name="fecha_nacimiento"/>
-            <field name="email" widget="email"/>
-            <field name="num_visitas"/>
+            <field name="email"/>
           </tree>
         </field>
       </record>
@@ -23,27 +22,36 @@
         <field name="name">Datos del paciente</field>
         <field name="model">gestion_pacientes.paciente_model</field>
         <field name="arch" type="xml">
-          <form string="paciente_data">
+          <form>
+            <header>
+              <button name="delete_historial" type="object" string="Eliminar Historial" confirm="Seguro?"></button>  
+            </header>
             <sheet>
-              <group name="1">
-                <h1 style="color:#a256a0;">Datos del paciente</h1>
+              <group string="Datos del paciente" col="2">
+                <group>
+                  <label for="dni" class="oe_edit_only"></label>
+                  <h1><field name="dni"></field></h1>
+                  <field name="name"></field>
+                  <field name="surname"></field>
+                  <field name="telefono"></field>
+                  <field name="fecha_nacimiento"></field>
+                  <field name="email"></field>
+                  <field name="num_visitas" readonly="1"></field>
+                </group>
+                <group string="Foto">
+                  <field name="img" widget="image"></field>
+                </group>
               </group>
-              <group name = "2">
-                <h2 style="color:bold"><field name ="dni"/></h2>
-              </group>
-              <group name="3">
-                <field name="name"/>
-                <field name="surname"/>
-                <field name="telefono"/>
-                <field name="fecha_nacimiento"/>
-                <field name="email"/>
-                <field name="num_visitas"/>
-              </group>
-              <group name="4">
-                <field name="img" widget="image" style="width: 120px; height: 150px;"/>
+              <group colspan="2">
+                <field name="id_historial">
+                  <tree>
+                    <field name="fecha"></field>
+                    <field name="detalle" widget="html"></field>
+                  </tree>
+                </field>
               </group>
             </sheet>
-          </form>
+          </form>  
         </field>
       </record>
 

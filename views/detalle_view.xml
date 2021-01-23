@@ -5,12 +5,37 @@
       <field name="name">Detalles de la visita</field>
       <field name="model">gestion_pacientes.visitas_model</field>
       <field name="arch" type="xml">
-        <form>
-          <group name="1">
+        <tree>
             <field name="paciente"/>
             <field name="fecha"/>
             <field name="detalle"/>
-          </group>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_pacientes.calendar_pacientes">
+      <field name="name">Calendario de Visitas</field>
+      <field name="model">gestion_pacientes.visitas_model</field>
+      <field name="arch" type="xml">
+        <calendar date_start="fecha" color="paciente" event_open_popup="True" mode="month" form_view_id="gestion_pacientes.form_detalles" quick_add="False">
+          <field name="paciente"/>
+          <field name="fecha"/>
+        </calendar>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_pacientes.form_detalles">
+      <field name="name">Lista detalles</field>
+      <field name="model">gestion_pacientes.visitas_model</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="paciente"/>
+              <field name="fecha"/>
+              <field name="detalle"/>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
