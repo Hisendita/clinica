@@ -24,22 +24,6 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gestion_pacientes.form_detalles">
-      <field name="name">Lista detalles</field>
-      <field name="model">gestion_pacientes.visitas_model</field>
-      <field name="arch" type="xml">
-        <form>
-          <sheet>
-            <group>
-              <field name="paciente"/>
-              <field name="fecha"/>
-              <field name="detalle"/>
-            </group>
-          </sheet>
-        </form>
-      </field>
-    </record>
-
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="gestion_pacientes.action_window_detalle">
       <field name="name">Detalle de visitas</field>
