@@ -7,7 +7,7 @@
       <menuitem name="Pacientes2" id="gestion_pacientes.pacientes_list" parent="gestion_pacientes.menu_pacientes"
               action="gestion_pacientes.action_window_pacientes" />
 
-    <menuitem name="Historial" id="gestion_pacientes.historial_list" parent="gestion_pacientes.pacientes_menu_pacientes"
+    <menuitem name="Historial" id="gestion_pacientes.historial_list" parent="gestion_pacientes.menu_pacientes"
               action="gestion_pacientes.action_window_detalle" />
     </data>
   </odoo>
